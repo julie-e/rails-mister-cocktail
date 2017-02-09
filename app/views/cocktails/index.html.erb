@@ -1,8 +1,14 @@
+
+<div class="banner">
+  <div class="banner-content">
+    <h1>Best Cocktails</h1>
+    <p>Discover the best cocktails in town</p>
+    <h2><%= link_to "Add a new cocktail", new_cocktail_path(@cocktail), class: "btn btn-primary" %></h2>  </div>
+</div>
+
+
 <h1 class="text-center">List of all cocktails</h1>
 
-<div class="text-center">
-  <h2><%= link_to "Add a new cocktail", new_cocktail_path(@cocktail), class: "btn btn-primary" %></h2>
-</div>
 
 
 <% @cocktails.each do |cocktail| %>

@@ -1,9 +1,11 @@
-<h1 class="text-center">Enter your cocktail's Information</h1>
+<div class="formulaire">
+  <h1 class="text-center">Enter your cocktail's Information</h1>
 
-<div>
-  <%= render "form" %>
+  <div>
+    <%= render "form" %>
 
-  <div class="text-center">
-    <p><%= link_to "Cancel", cocktails_path(@cocktail), class: "btn btn-danger" %></p>
+    <div class="text-center">
+      <p><%= link_to "Cancel", cocktails_path(@cocktail), class: "btn btn-danger" %></p>
+    </div>
   </div>
 </div>
