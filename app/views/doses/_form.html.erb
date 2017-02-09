@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <%= f.input :description %>
-  <%= f.input :ingredient %>
+  <%= f.association :ingredient, collection: Ingredient::all, prompt: "Chose an ingredient" %>
   <%= f.submit 'dose!', class: "btn btn-success"%>
 
 <% end %>

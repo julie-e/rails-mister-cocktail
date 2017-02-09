@@ -1,10 +1,17 @@
 <h1 class="text-center">List of all cocktails</h1>
 
-<!-- <div class="text-center">
-  <h2><%= link_to "Add a new cocktail", new_restaurant_path(@restaurant), class: "btn btn-primary" %></h2>
-</div> -->
+<div class="text-center">
+  <h2><%= link_to "Add a new cocktail", new_cocktail_path(@cocktail), class: "btn btn-primary" %></h2>
+</div>
 
 
 <% @cocktails.each do |cocktail| %>
   <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
+  <p><ul>
+    <% cocktail.doses.each do |dose| %>
+      <li><strong><%= dose.ingredient.name.upcase %></strong> :
+      <%= dose.description %></li>
+    <% end %>
+  </ul>
+  </p>
 <% end %>
