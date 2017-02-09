@@ -3,13 +3,18 @@
 <ul>
 <% @cocktail.doses.each do |dose| %>
   <li><strong><%= dose.ingredient.name.upcase %></strong> :
-  <%= dose.description %></li>
+  <%= dose.description %>
+  <p><%= link_to "Delete this dose", dose_path(dose),
+      method: :delete %></p>
+</li>
 <% end %>
 </ul>
 
 <div class="text-center">
   <p><%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %></p>
 </div>
+
+
 
 <div class="text-center">
   <p><%= link_to "Back to Cocktails", cocktails_path, class: "btn btn-danger" %></p>
