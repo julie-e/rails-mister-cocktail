@@ -2,30 +2,25 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show]
 
   def index
-    @cocktails = cocktail.all
+    @cocktails = Cocktail.all
   end
 
   def show
   end
 
   def new
-    @cocktail = cocktail.new
+    @cocktail = Cocktail.new
   end
 
   def create
-    cocktail = cocktail.create!(cocktail_params)
+    cocktail = Cocktail.create!(cocktail_params)
     redirect_to cocktail_path(cocktail)
-  end
-
-  def category
-    @category = params[:category]
-    @cocktails = cocktail.where(category: @category)
   end
 
   private
 
   def set_cocktail
-    @cocktail = cocktail.find(params[:id])
+    @cocktail = Cocktail.find(params[:id])
   end
 
   def cocktail_params
