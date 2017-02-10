@@ -4,11 +4,20 @@
   <div class="banner-content">
     <h1>Best Cocktails</h1>
     <p>Discover the best cocktails in town</p>
-    <h2><%= link_to "Add a new cocktail", new_cocktail_path(@cocktail), class: "btn btn-primary" %></h2>  </div>
+
+    <ul class="list-inline">
+      <li>
+        <h2><%= link_to "Add a new cocktail", new_cocktail_path(@cocktail), class: "btn btn-primary" %></h2>
+      </li>
+      <li>
+        <h2><%= link_to "See our cocktails", '#cocktails', class: "btn btn-primary" %></h2>
+      </li>
+    </ul>
+    </div>
 </div>
 
 
-<h1 class="text-center title"><i class="fa fa-glass" aria-hidden="true"></i>    Our Amazing Cocktails   <i class="fa fa-glass" aria-hidden="true"></i></h1>
+<h1 class="text-center title" id="cocktails"><i class="fa fa-glass" aria-hidden="true"></i>    Our Amazing Cocktails   <i class="fa fa-glass" aria-hidden="true"></i></h1>
 
 <div class="container">
   <div class="row">

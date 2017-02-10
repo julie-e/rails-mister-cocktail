@@ -21,3 +21,13 @@
   margin-bottom: 20px;
 }
 
+.banner .btn-primary {
+  opacity: 0.9;
+  background-color: none;
+  border-color: $blue;
+}
+
+.banner .btn-primary:hover {
+  opacity: 1;
+}
+
