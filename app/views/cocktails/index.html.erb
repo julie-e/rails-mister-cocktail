@@ -13,20 +13,22 @@
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
+      <% image_url = cocktail.photo.present? ? cl_image_path(cocktail.photo, height: 200, width: 200, crop: :thumb) : image_path("cocktail-default.jpg") %>
       <div class="col-xs-12 col-sm-4 col-md-3">
-        <div class="card">
-            <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: "card-title text-center"%></h2>
-            <p><ul class="card-description">
-              <% cocktail.doses.each do |dose| %>
-                <li><strong><%= dose.ingredient.name.upcase %></strong> :
-                <%= dose.description %></li>
-              <% end %>
-            </ul>
-            </p>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= image_url %>')">
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: "card-title text-center"%></h2>
+          <p><ul class="card-description">
+            <% cocktail.doses.each do |dose| %>
+              <li><strong><%= dose.ingredient.name.upcase %></strong> :
+              <%= dose.description %></li>
+            <% end %>
+          </ul>
+          </p>
           </div>
         </div>
       <% end %>
   </div>
 </div>
+
 
 
