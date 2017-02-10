@@ -8,7 +8,7 @@
 </div>
 
 
-<h1 class="text-center title">List of all cocktails</h1>
+<h1 class="text-center title"><i class="fa fa-glass" aria-hidden="true"></i>    Our Amazing Cocktails   <i class="fa fa-glass" aria-hidden="true"></i></h1>
 
 <div class="container">
   <div class="row">
@@ -18,7 +18,7 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= image_url %>')">
           <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: "card-title text-center"%></h2>
           <p><ul class="card-description">
-            <% cocktail.doses.each do |dose| %>
+            <% cocktail.doses.first(4).each do |dose| %>
               <li><strong><%= dose.ingredient.name.upcase %></strong> :
               <%= dose.description %></li>
             <% end %>
@@ -26,8 +26,8 @@
           </p>
           <p><%= link_to "Update", cocktail_path(cocktail), class: "btn btn-info btn-xs card-update text-center"%></p>
           </div>
-        </div>
-      <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 

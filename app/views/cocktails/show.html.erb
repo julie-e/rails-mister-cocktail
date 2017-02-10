@@ -2,18 +2,31 @@
 
   <h1 class="text-center"><%= @cocktail.name %></h1>
 
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+<div class="cocktail-card text-center">
+  <div class="cocktail-image">
+    <% image_url = @cocktail.photo.present? ? cl_image_path(@cocktail.photo, height: 200, width: 200, crop: :thumb) : image_path("cocktail-default.jpg") %>
+    <%= cl_image_tag image_url, height: 300, width: 400, crop: :thumb %>
+  </div>
 
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-      <li>
-        <%= dose.description %> of <%= link_to dose.ingredient.name, ingredient_path(dose.ingredient) %>
-        <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fa fa-trash icon"></i>
+  <h3>This is how you do it:</h3>
+
+  <div class="cocktail-doses">
+    <% if @cocktail.doses.empty? %>
+      <br> <%= "*** Add you ingredients below ***" %>
+    <% else %>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <%= dose.description %> of <%= link_to dose.ingredient.name, ingredient_path(dose.ingredient) %>
+            <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fa fa-trash icon"></i>
+            <% end %>
+          </li>
         <% end %>
-      </li>
+      </ul>
     <% end %>
-  </ul>
+  </div>
+</div>
 
   <div class="text-center">
     <p><%= link_to "Back to Cocktails", cocktails_path, class: "btn btn-primary" %></p>
