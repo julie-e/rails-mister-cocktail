@@ -1,0 +1,17 @@
+.background {
+  background: linear-gradient(-225deg, rgba(0,101,168,0.7) 0%, rgba(0,36,61,0.7) 50%), image-url("background.jpg") no-repeat center;
+  color: white;
+  padding: 40px;
+  height: 100vh;
+}
+
+.icon {
+  color: #999999;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.background a {
+  text-decoration: none;
+}
+

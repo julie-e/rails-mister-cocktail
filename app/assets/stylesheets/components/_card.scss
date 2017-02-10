@@ -1,0 +1,51 @@
+.title {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card {
+  height: 200px;
+  background-size: cover !important;
+  color: black;
+  position: relative;
+  margin: 10px 0 20px;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px dashed #999999;
+}
+
+.card-title {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.card-title:hover {
+  text-decoration: none;
+}
+
+.card-description {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 13px;
+  }
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}

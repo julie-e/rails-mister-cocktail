@@ -1,4 +1,5 @@
 
+
 <div class="banner">
   <div class="banner-content">
     <h1>Best Cocktails</h1>
@@ -7,17 +8,25 @@
 </div>
 
 
-<h1 class="text-center">List of all cocktails</h1>
+<h1 class="text-center title">List of all cocktails</h1>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <div class="card">
+            <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: "card-title text-center"%></h2>
+            <p><ul class="card-description">
+              <% cocktail.doses.each do |dose| %>
+                <li><strong><%= dose.ingredient.name.upcase %></strong> :
+                <%= dose.description %></li>
+              <% end %>
+            </ul>
+            </p>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
 
 
-
-<% @cocktails.each do |cocktail| %>
-  <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
-  <p><ul>
-    <% cocktail.doses.each do |dose| %>
-      <li><strong><%= dose.ingredient.name.upcase %></strong> :
-      <%= dose.description %></li>
-    <% end %>
-  </ul>
-  </p>
-<% end %>
