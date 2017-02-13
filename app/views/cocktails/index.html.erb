@@ -1,6 +1,6 @@
 
 
-<div class="banner">
+<div class="banner" id="top">
   <div class="banner-content">
     <h1>Best Cocktails</h1>
     <p>Discover the best cocktails in town</p>
@@ -25,20 +25,27 @@
       <% image_url = cocktail.photo.present? ? cl_image_path(cocktail.photo, height: 200, width: 200, crop: :thumb) : image_path("cocktail-default.jpg") %>
       <div class="col-xs-12 col-sm-4 col-md-3">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= image_url %>')">
+          <%= link_to "", cocktail_path(cocktail), class: "card-link"%>
           <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: "card-title text-center"%></h2>
           <p><ul class="card-description">
             <% cocktail.doses.first(4).each do |dose| %>
               <li><strong><%= dose.ingredient.name.upcase %></strong> :
               <%= dose.description %></li>
             <% end %>
-          </ul>
+          </ul></p>
+
+
+          <p><%= link_to "See full list", cocktail_path(cocktail), class: "btn btn-info btn-xs card-update text-center" %>
           </p>
-          <p><%= link_to "Update", cocktail_path(cocktail), class: "btn btn-info btn-xs card-update text-center"%></p>
-          </div>
+
+
+        </div>
       </div>
     <% end %>
   </div>
 </div>
 
+
+<h2><%= link_to "Back to top", '#top', class: "back-to-top" %></h2>
 
 

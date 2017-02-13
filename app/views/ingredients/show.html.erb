@@ -1,15 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1><%= @ingredient.name %></h1>
-      <ul>
-        <% @ingredient.cocktails.each do |cocktail| %>
-          <li>
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-          </li>
-        <% end %>
-      </ul>
-      <%= link_to 'Back', cocktails_path %>
+<div class="background">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <h1 class="text-center"><%= @ingredient.name %></h1>
+        <ul>
+          <% @ingredient.cocktails.each do |cocktail| %>
+            <li>
+              <%= link_to cocktail.name, cocktail_path(cocktail), class: "cocktail-doses" %>
+            </li>
+          <% end %>
+        </ul>
+        <div class="text-center">
+          <%= link_to 'Back', cocktails_path, class: "btn btn-success"%>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>

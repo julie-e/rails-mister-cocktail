@@ -36,3 +36,19 @@
   font-family: 'Open sans', sans-serif;
   margin-bottom: 30px;
 }
+
+.back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  font-size: 18px;
+  padding: 4px;
+  margin-left: 100px;
+  margin-right: 100px;
+  &:hover {
+    color: #777777;
+    text-decoration: none;
+    background-color: #E6E6E6;
+  }
+}

@@ -52,17 +52,17 @@
 .navbar-wagon-button {
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 20em;
-  line-height: 40px;
-  background-color: #D23333;
+  border-radius: 10em;
+  line-height: 30px;
+  background-color: #999999;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 1px solid #777777;
 }
 .navbar-wagon-button:hover {
-  color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  color: #999999;
+  background: #E6E6E6;
+  border-color: #999999;
 }
 
 .navbar-wagon-button-unstyled {
@@ -133,4 +133,11 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.list-all {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }

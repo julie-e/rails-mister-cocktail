@@ -12,6 +12,10 @@
   margin: 10px 0 20px;
   border-radius: 5px;
   padding: 3px;
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s;
+  }
 }
 
 .card-title {
@@ -23,37 +27,38 @@
   font-family: 'Chewy', cursive;
   font-weight: lighter;
   font-size: 28px;
+    &:hover {
+      color:white;
+      text-decoration: none;
+    }
 }
 
-.card-title:hover {
-  color:white;
-  text-decoration: none;
-}
 
 .card-description {
   position: absolute;
   top: 70px;
   left: 10px;
   color:#E7E7E7;
+    h2 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 13px;
+      }
 }
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 13px;
-  }
+
 .card-link {
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: 32px;
   right: 0;
   width: 100%;
   z-index:2;
   background: black;
   opacity: 0;
-}
-.card-link:hover{
-  opacity: 0.1;
+    &:hover{
+      transition: all 0.1s;
+    }
 }
 
 .card-update {
@@ -62,7 +67,11 @@
   right: 30%;
   bottom: 10px;
   color: #555555;
-  opacity: 0.8
+  opacity: 0.8;
+  &:hover{
+    color: #555555;
+    opacity:1;
+  }
 }
 
 .cocktail-card {
@@ -70,6 +79,11 @@
   border: 1px dashed #999999;
   margin: 30px;
   border-radius: 3px;
+  background-color: #2E2E50;
+  opacity: 0.8;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .cocktail-doses li {
